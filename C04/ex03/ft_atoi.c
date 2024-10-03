@@ -12,11 +12,12 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	whitespaces(char *str, int *ptr_i)
+int whitespaces(char *str, int *ptr_i)
 {
-	int	count;
-	int	i;
+	int count;
+	int i;
 
 	i = 0;
 	count = 1;
@@ -32,11 +33,11 @@ int	whitespaces(char *str, int *ptr_i)
 	return (count);
 }
 
-int	ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-	int	sign;
-	int	result;
-	int	i;
+	int sign;
+	int result;
+	int i;
 
 	result = 0;
 	sign = whitespaces(str, &i);
@@ -50,8 +51,16 @@ int	ft_atoi(char *str)
 	return (result);
 }
 
-// int main(void)
-// {
-// 	char *s = "   ---+--+1234ab567";
-// 	printf("%d\n", ft_atoi(s)); 
-// }
+int main(void)
+{
+	char *s = "   ---+--+1234ab567";
+	char *s2 = "-2147483648";
+	char *s3 = "2147483648";
+	printf("%d\n", ft_atoi(s));
+	printf("%d\n", atoi(s)); // output: 0
+	printf("%d\n", ft_atoi(s2));
+	printf("%d\n", atoi(s2)); // output: -2147483648
+	printf("%d\n", ft_atoi(s3));
+	printf("%d\n", atoi(s3)); // output: 2147483647
+	return 0;
+}

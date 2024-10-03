@@ -13,9 +13,9 @@
 // #include <unistd.h>
 // #include <string.h> // for standard strncpy
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int	i;
+	unsigned int i;
 
 	i = 0;
 	while (i < n && src[i] != '\0')
@@ -33,7 +33,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 // int main()
 // {
-//     char src[] = "hello"; 
+//     char src[] = "hello";
 //     char dest[10] = "world";
 //     char dest1[10] = "wrong";
 
@@ -41,7 +41,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 //     write(1, dest, 8);
 //     write(1, "\n", 1); // Write a newline
 //     ft_strncpy(dest, src, 8);
-//     write(1, dest, 8);
+//     write(1, dest, 8); // output will be "hello\0\0\0\0"
 //     write(1, "\n", 1); // Write a newline
 
 //     // Using the standard strncpy with 'n' set to 8 for comparison
